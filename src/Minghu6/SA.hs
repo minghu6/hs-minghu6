@@ -7,14 +7,15 @@ module Minghu6.SA
 import Data.List
 import Data.Maybe
 
-_nativeSuffix [] _ = []
-_nativeSuffix [x] acc = acc
-_nativeSuffix (x:xs) acc = _nativeSuffix xs (xs:acc)
-
--- nativeSuffix "abc" ["abc", "bc", "c"]
-nativeSuffix s = reverse (_nativeSuffix s [s])
+--_nativeSuffix [] _ = []
+--_nativeSuffix [x] acc = acc
+--_nativeSuffix (x:xs) acc = _nativeSuffix xs (xs:acc)
+--
+---- nativeSuffix "abc" ["abc", "bc", "c"]
+--nativeSuffix s = reverse (_nativeSuffix s [s])
+nativeSuffix = init . tail
 
 sortSuffixNative s = (\ss -> [i | x <- sort ss, let i = fromJust $ elemIndex x ss]) $ nativeSuffix s
 
 someFunc :: IO ()
-someFunc = putStrLn $ show $ sortSuffixNative "def"
+someFunc = print (sortSuffixNative "def")

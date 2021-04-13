@@ -1,0 +1,16 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "hs-minghu6:lib"
+
+    - path: "./app/Main.hs"
+      component: "hs-minghu6:exe:hs-minghu6-exe"
+
+    - path: "./app/Paths_hs_minghu6.hs"
+      component: "hs-minghu6:exe:hs-minghu6-exe"
+
+    - path: "./doctest"
+      component: "hs-minghu6:test:hs-minghu6-doctest"
+
+    - path: "./test"
+      component: "hs-minghu6:test:hs-minghu6-test"
